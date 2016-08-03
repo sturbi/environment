@@ -1,31 +1,52 @@
 #!/bin/bash
 
-yum -y install vim
+echo "install vim git tmux"
+yum -y install vim git tmux
 
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+echo "create directorys"
+mkdir -p ~/.vim/autoload ~/.vim/bundle
 
-cd ~/.vim
-git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
+echo "install pathogen"
+curl -LSso ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
-cd ~/.vim/bundle && \
-git clone --depth=1 https://github.com/scrooloose/syntastic.git
-
+echo "install ctrlp"
 cd ~/.vim/bundle
-git clone git://github.com/godlygeek/tabular.git
+git clone https://github.com/kien/ctrlp.vim.git ctrlp.vim
 
-git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
-
+echo "install syntastic"
 cd ~/.vim/bundle
-git clone git://github.com/altercation/vim-colors-solarized.git
+git clone https://github.com/scrooloose/syntastic.git syntastic
 
+echo "install tabular"
 cd ~/.vim/bundle
-git clone git://github.com/tpope/vim-fugitive.git
+git clone https://github.com/godlygeek/tabular.git tabular
 
-git submodule add -f git://github.com/rodjek/vim-puppet.git ~/.vim/bundle/puppet
-
+echo "install airline"
 cd ~/.vim/bundle
-git clone git://github.com/tpope/vim-sensible.git
+git clone https://github.com/vim-airline/vim-airline vim-airline
 
-git clone git://github.com/tmux-plugins/vim-tmux.git ~/.vim/bundle/vim-tmux
+echo "install vim-colors-solarized"
+cd ~/.vim/bundle
+git clone https://github.com/altercation/vim-colors-solarized.git vim-colors-solarized
 
+echo "install vim-fugitive"
+cd ~/.vim/bundle
+git clone https://github.com/tpope/vim-fugitive.git vim-fugitive
+
+echo "install vim puppet"
+cd ~/.vim/bundle
+git clone https://github.com/rodjek/vim-puppet.git puppet
+
+echo "install vim-sensible"
+cd ~/.vim/bundle
+git clone https://github.com/tpope/vim-sensible.git vim-sensible
+
+echo "install vim-tmux"
+cd ~/.vim/bundle
+git clone https://github.com/tmux-plugins/vim-tmux.git vim-tmux
+
+echo "download vimrc"
+curl -LSso ~/.vimrc https://raw.githubusercontent.com/sturbi/environment/master/linux/.vimrc
+
+echo "download tmux.conf"
+curl -LSso ~/.tmux.conf https://raw.githubusercontent.com/sturbi/environment/master/linux/.tmux.conf
