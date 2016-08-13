@@ -40,6 +40,20 @@ git clone https://github.com/vim-airline/vim-airline vim-airline
 echo "******************************************************************"
 
 echo "******************************************************************"
+echo "install airline themes"
+cd ~/.vim/bundle
+git clone https://github.com/vim-airline/vim-airline-themes vim-airline-themes
+echo "******************************************************************"
+
+echo "******************************************************************"
+echo "install powerline fonts"
+cd ~
+git clone https://github.com/powerline/fonts powerlinefonts
+cd powerlinefonts
+bash ./install.sh
+echo "******************************************************************"
+
+echo "******************************************************************"
 echo "install vim-colors-solarized"
 cd ~/.vim/bundle
 git clone https://github.com/altercation/vim-colors-solarized.git vim-colors-solarized
