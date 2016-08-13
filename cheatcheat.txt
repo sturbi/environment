@@ -1,0 +1,50 @@
+bash
+- Strg+a				: start of line
+- Strg+e				: End fo line
+- Strg+l				: clear Screen
+- Strg+b				: previous word begin
+- Strg+f 				: next word end
+- Strg+u				: delete to start of line
+- Strg+k				: delete to end of line
+- Alt+u					: Uppercase to end of word
+- Alt+l					: lowercase to end of word
+
+
+tmux
+- Strg+a "			: horizontal teilen
+- Strg+a  %  		: vertikal teilen
+
+
+VIM
+- i							: insert before the cursor
+- I							: insert at the beginning of the line
+- a							: insert (append) after the cursor
+- A							: insert (append) at the end of the line
+- o							: append (open) a new line below the current line
+- O							: append (open) a new line above the current line
+
+- u 						: undo
+- yy						: copy line
+- 2yy						: copy 2 lines
+- p							: paste after
+- P							: paste before
+- d							: delete line
+- d2						: delete 2 lines
+- D							: delete to the end
+- <							: shift left
+- >							: shift right
+
+:%s/old/new/g		: replace
+:%s/old/new/gc	: replace with confirm
+
+:set tabstop=8	: tabstops
+:set syntax=php : php syntax
+:set syntax on	: syntax on
+:set paste			: paste mode
+:set nopaste		: no pastemode
+
+:tabe file			: open file
+:tabn						: next tab
+:tabp						: priv tab
+
+Strg+ww					: switch buffer
