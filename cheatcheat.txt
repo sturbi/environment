@@ -1,38 +1,40 @@
-bash
-- Strg+a				: start of line
-- Strg+e				: End fo line
-- Strg+l				: clear Screen
-- Strg+b				: previous word begin
-- Strg+f 				: next word end
-- Strg+u				: delete to start of line
-- Strg+k				: delete to end of line
-- Alt+u					: Uppercase to end of word
-- Alt+l					: lowercase to end of word
+## bash
+strg+a				: start of line
+strg+e				: End fo line
+strg+l				: clear Screen
+strg+b				: previous word begin
+strg+f 				: next word end
+strg+u				: delete to start of line
+strg+k				: delete to end of line
+alt+u					: Uppercase to end of word
+alt+l					: lowercase to end of word
 
+## tmux
+strg+a "			: horizontal teilen
+strg+a  %  		: vertikal teilen
 
-tmux
-- Strg+a "			: horizontal teilen
-- Strg+a  %  		: vertikal teilen
+## vim
+i							: insert before the cursor
+I							: insert at the beginning of the line
+a							: insert (append) after the cursor
+A							: insert (append) at the end of the line
+o							: append (open) a new line below the current line
+O							: append (open) a new line above the current line
 
-
-VIM
-- i							: insert before the cursor
-- I							: insert at the beginning of the line
-- a							: insert (append) after the cursor
-- A							: insert (append) at the end of the line
-- o							: append (open) a new line below the current line
-- O							: append (open) a new line above the current line
-
-- u 						: undo
-- yy						: copy line
-- 2yy						: copy 2 lines
-- p							: paste after
-- P							: paste before
-- d							: delete line
-- d2						: delete 2 lines
-- D							: delete to the end
-- <							: shift left
-- >							: shift right
+u 						: undo
+yy						: copy line
+2yy						: copy 2 lines
+p							: paste after
+P							: paste before
+d							: delete line
+d2						: delete 2 lines
+d							: delete to the end
+<							: shift left
+>							: shift right
+~							: toggle case
+3~						: toggle 3 chars
+g~~						: toggle line
+g~$						: toggle to end of line
 
 :%s/old/new/g		: replace
 :%s/old/new/gc	: replace with confirm
@@ -47,4 +49,4 @@ VIM
 :tabn						: next tab
 :tabp						: priv tab
 
-Strg+ww					: switch buffer
+strg+ww					: switch buffer
