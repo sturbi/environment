@@ -14,6 +14,6 @@ ATTENTION: never pipe content from curl into bash!
 
 ## Windows powershell
 
-to edit your startupfile 
+to edit your startupfile
 
 `notepad $PROFILE`

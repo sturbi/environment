@@ -8,6 +8,7 @@ set noerrorbells
 set mouse=a
 set nowrap
 set scrolloff=3
+set modeline
 filetype plugin indent on
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#empty_message = ''
