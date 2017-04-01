@@ -1,0 +1,16 @@
+[user]
+	name = Steffen Urbanski
+	email = sturbi@sturbi.de
+#[core]
+#	excludesfile = ~/.gitignore
+#	attributesfile = ~/.gitattributes
+[gc]
+  autoDetach = false
+[alias]
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[color]
+  ui = always
+[help]
+  autocorrect = 1
+[push]
+	default = current
