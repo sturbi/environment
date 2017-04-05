@@ -9,9 +9,13 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle
 echo "install pathogen"
 curl -LSso ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
-echo "install ctrlp"
+#echo "install ctrlp"
+#cd ~/.vim/bundle
+#git clone https://github.com/kien/ctrlp.vim.git ctrlp.vim
+
+echo "install Nerdtree"
 cd ~/.vim/bundle
-git clone https://github.com/kien/ctrlp.vim.git ctrlp.vim
+git clone https://github.com/scrooloose/nerdtree.git nerdtree
 
 echo "install syntastic"
 cd ~/.vim/bundle
