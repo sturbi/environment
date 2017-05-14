@@ -5,7 +5,7 @@ set nocompatible
 set t_Co=256
 set ignorecase
 set noerrorbells
-set mouse=a
+" set mouse=a
 set nowrap
 set scrolloff=3
 set modeline
