@@ -1,4 +1,4 @@
-$env:PSModulePath = $env:PSModulePath + ";C:\data\WindowsPowerShell\Modules" # + ";\\GSBEIT01\PSModules"
+$env:PSModulePath = $env:PSModulePath + ";C:\data\WindowsPowerShell\Modules" 
 
 Add-PSSnapin Quest.ActiveRoles.ADManagement
 
@@ -97,9 +97,6 @@ function shorten-path([string] $path) {
    return $loc
 }
 
-function deploy{
-   & ssh a.steffen.urbanski@gszdlm01.zd.gematik.de "sudo /usr/local/bin/r10k deploy environment -ptv"
-}
 
 function big(){
 $pshost = get-host
