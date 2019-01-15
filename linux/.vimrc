@@ -22,3 +22,5 @@ set background=dark
 colorscheme solarized
 " let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 1
+map <C-n> :NERDTreeToggle<CR>
+au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/syntax/yaml.vim
