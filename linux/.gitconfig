@@ -7,10 +7,11 @@
 [gc]
   autoDetach = false
 [alias]
+  df = diff --color --color-words --abbrev
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 [color]
   ui = always
 [help]
   autocorrect = 1
 [push]
-	default = current
+  default = current
