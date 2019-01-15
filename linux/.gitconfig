@@ -1,17 +1,26 @@
 [user]
 	name = Steffen Urbanski
 	email = sturbi@sturbi.de
-#[core]
-#	excludesfile = ~/.gitignore
-#	attributesfile = ~/.gitattributes
+[code]
+  editor=vim
+[merge]
+  tool=vimdiff
 [gc]
   autoDetach = false
 [alias]
   df = diff --color --color-words --abbrev
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 [color]
-  ui = always
+  ui = true
+[pager]                                                                                                                                                                                                                   
+  diff = diff-so-fancy | less --tabs=4 -RFX                                                                                                                                                                               
+  show = diff-so-fancy | less --tabs=4 -RFX                                                                                                                                                                               
 [help]
   autocorrect = 1
 [push]
-  default = current
+  default = simple
+[pull]                                                                                                                                                                                                                    
+  rebase = true                                                                                                                                                                                                           
+[http]                                                                                                                                                                                                                    
+  proxy = http://10.11.111.1:3128
