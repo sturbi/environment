@@ -1,5 +1,6 @@
 # cheatsheet
 ## bash
+```
 strg+a				: start of line
 strg+e				: End fo line
 strg+l				: clear Screen
@@ -9,12 +10,14 @@ strg+u				: delete to start of line
 strg+k				: delete to end of line
 alt+u				: Uppercase to end of word
 alt+l				: lowercase to end of word
-
+```
 ## tmux
+```
 strg+a "			: horizontal teilen
 strg+a  %  		    : vertikal teilen
-
+```
 ## vim
+```
 i					: insert before the cursor
 I					: insert at the beginning of the line
 a					: insert (append) after the cursor
@@ -51,7 +54,7 @@ g~$					: toggle to end of line
 :tabp				: priv tab
 
 strg+ww				: switch buffer
-
+```
 ## ssh key generation
 ```
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "sturbi@sturbi.de"
