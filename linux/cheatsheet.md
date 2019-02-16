@@ -1,3 +1,4 @@
+# cheatsheet
 ## bash
 strg+a				: start of line
 strg+e				: End fo line
@@ -51,7 +52,9 @@ g~$					: toggle to end of line
 
 strg+ww				: switch buffer
 
-# ssh key generation
+## ssh key generation
+```
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "sturbi@sturbi.de"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
+```
