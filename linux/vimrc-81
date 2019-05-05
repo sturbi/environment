@@ -1,0 +1,34 @@
+set tabstop=2
+syntax on
+set encoding=utf-8
+set nocompatible
+set t_Co=256
+set ignorecase
+set noerrorbells
+set nowrap
+set scrolloff=3
+set modeline
+filetype plugin indent on
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#empty_message = ''
+let g:airline#extensions#branch#use_vcscommand = 0
+let g:airline#extensions#branch#displayed_head_limit = 10
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+map <C-n> :NERDTreeToggle<CR>
+call plug#begin()
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'editorconfig/editorconfig-vim'
+Plug 'elzr/vim-json'
+Plug 'mrk21/yaml-vim'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'rodjek/vim-puppet'
+Plug 'vim-ruby/vim-ruby'
+Plug 'pearofducks/ansible-vim'
+call plug#end()
