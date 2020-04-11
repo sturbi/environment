@@ -22,5 +22,5 @@
   default = simple
 [pull]                                                                                                                                                                                                                    
   rebase = true                                                                                                                                                                                                           
-[http]                                                                                                                                                                                                                    
-  proxy = http://10.11.111.1:3128
+#[http]                                                                                                                                                                                                                    
+#  proxy = http://10.11.111.1:3128
