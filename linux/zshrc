@@ -6,14 +6,14 @@ export TERM="xterm-256color"
 # export TERM="screen-256color"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/steffen.urbanski/.oh-my-zsh"
+export ZSH="/home/steffen/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="agnoster"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ZSH_TMUX_AUTOSTART='true'
 
@@ -147,21 +147,21 @@ bindkey "\033[4~" end-of-line
 PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/bin:$PATH"
 export PATH
 
-alias google-chrome="/usr/bin/google-chrome >/dev/null 2>&1 &"
+# alias google-chrome="/usr/bin/google-chrome >/dev/null 2>&1 &"
 
-source ~/.govc.conf
+# source ~/.govc.conf
 export GOPATH=$HOME/go
 
-export https_proxy=http://192.168.110.10:3128
-export http_proxy=http://192.168.110.10:3128
-export no_proxy="192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,.domain.local,127.0.0.1,localhost"
+# export https_proxy=http://192.168.110.10:3128
+# export http_proxy=http://192.168.110.10:3128
+# export no_proxy="192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,.domain.local,127.0.0.1,localhost"
 
-gsettings set org.gnome.system.proxy mode 'auto'
-gsettings set org.gnome.system.proxy autoconfig-url 'http://192.168.110.10/wpad.dat'
+# gsettings set org.gnome.system.proxy mode 'auto'
+# gsettings set org.gnome.system.proxy autoconfig-url 'http://192.168.110.10/wpad.dat'
 
 export PYTHONWARNINGS=ignore::UserWarning
 
-export SSH_KEY_PATH="~/.ssh/id_ed25519"
+# export SSH_KEY_PATH="~/.ssh/id_ed25519"
 
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
