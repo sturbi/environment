@@ -7,3 +7,23 @@ fi
 
 #User specific aliases and functions
 alias wget="curl -O"
+
+source ~/.govc.conf
+
+export GOPATH=$HOME/go
+
+export DISPLAY=:0
+
+
+ssh() {
+    if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux: server" ]; then
+            tmux rename-window "$*"
+            command ssh "$@"
+            tmux set-window-option automatic-rename "on" 1>/dev/null
+    else
+            command ssh "$@"
+    fi
+}
+
+export SSH_AUTH_SOCK=/data/wsl-ssh-pageant/ssh-agent.sock
+
