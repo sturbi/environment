@@ -1,15 +1,15 @@
-$env:PSModulePath = $env:PSModulePath + ";C:\data\WindowsPowerShell\Modules" 
+# $env:PSModulePath = $env:PSModulePath + ";C:\data\WindowsPowerShell\Modules"
 
-Add-PSSnapin VeeamPSSnapin
-Add-PSSnapin Quest.ActiveRoles.ADManagement
+# Add-PSSnapin VeeamPSSnapin
+# Add-PSSnapin Quest.ActiveRoles.ADManagement
 
-Import-Module BitsTransfer
+# Import-Module BitsTransfer
 
-$lib = "C:\data\WindowsPowerShell\lib\"
-$pstools = "C:\data\WindowsPowerShell\PSTools"
+# $lib = "C:\data\WindowsPowerShell\lib\"
+# $pstools = "C:\data\WindowsPowerShell\PSTools"
 
-. "C:\data\WindowsPowerShell\lib\sign.ps1"
-. "C:\data\WindowsPowerShell\lib\loads.ps1"
+# . "C:\data\WindowsPowerShell\lib\sign.ps1"
+# . "C:\data\WindowsPowerShell\lib\loads.ps1"
 
 $def = @"
 public class ClientCertWebClient : System.Net.WebClient
@@ -40,26 +40,27 @@ public class ClientCertWebClient : System.Net.WebClient
 }
 "@
 Add-Type -TypeDefinition $def
-function vcsa-admin {
-    Clear-Variable username -ErrorAction SilentlyContinue
-    Clear-Variable password -ErrorAction SilentlyContinue
-    Clear-Variable wcresult -ErrorAction SilentlyContinue
-    Clear-Variable wc -ErrorAction SilentlyContinue
-    Clear-Variable credjsonstring -ErrorAction SilentlyContinue
-    $wc = New-Object ClientCertWebClient
-    $certs = dir cert:\CurrentUser\My
-    $wc.AddCerts($certs)
-    $wcresult = $wc.DownloadString("https://localhost:12984/keepass/entry/6A6D8747428B614DBE021470D5DE8FF6")
-    $credjsonstring = $wcresult | ConvertFrom-Json
-    $username = $credjsonstring.Username
-    $password = $credjsonstring.Password
-    connect-viserver vcsa-01 -User $username -Password $password
-    Clear-Variable username -ErrorAction SilentlyContinue
-    Clear-Variable password -ErrorAction SilentlyContinue
-    Clear-Variable wcresult -ErrorAction SilentlyContinue
-    Clear-Variable wc -ErrorAction SilentlyContinue
-    Clear-Variable credjsonstring -ErrorAction SilentlyContinue
-}
+
+#function vcsa-admin {
+#    Clear-Variable username -ErrorAction SilentlyContinue
+#    Clear-Variable password -ErrorAction SilentlyContinue
+#    Clear-Variable wcresult -ErrorAction SilentlyContinue
+#    Clear-Variable wc -ErrorAction SilentlyContinue
+#    Clear-Variable credjsonstring -ErrorAction SilentlyContinue
+#    $wc = New-Object ClientCertWebClient
+#    $certs = dir cert:\CurrentUser\My
+#    $wc.AddCerts($certs)
+#    $wcresult = $wc.DownloadString("https://localhost:12984/keepass/entry/6A6D8747428B614DBE021470D5DE8FF6")
+#    $credjsonstring = $wcresult | ConvertFrom-Json
+#    $username = $credjsonstring.Username
+#    $password = $credjsonstring.Password
+#    connect-viserver vcsa-01 -User $username -Password $password
+#    Clear-Variable username -ErrorAction SilentlyContinue
+#    Clear-Variable password -ErrorAction SilentlyContinue
+#    Clear-Variable wcresult -ErrorAction SilentlyContinue
+#    Clear-Variable wc -ErrorAction SilentlyContinue
+#    Clear-Variable credjsonstring -ErrorAction SilentlyContinue
+#}
 
 function global:prompt {
     # our theme
@@ -68,7 +69,7 @@ function global:prompt {
     $cloc = [ConsoleColor]::Cyan
     $cvcenter = [ConsoleColor]::Yellow
     write-host "$([char]0x0A7) " -NoNewline -ForegroundColor $cloc
-    $PSName = '(' + $PSVersion + ') '
+    $PSName = '(' + $PSVersionTable.PSVersion + ') '
     Write-Host $PSName -NoNewline
     write-host ([net.dns]::GetHostName()) -NoNewline -ForegroundColor $chost
     if ($global:DefaultVIServer) {
@@ -76,19 +77,19 @@ function global:prompt {
         write-host $vcenterstring -NoNewline -ForegroundColor $cvcenter
     }
     write-host ' {' -NoNewline -ForegroundColor $cdelim
-	write-host (Get-Location).Path -NoNewline -ForegroundColor $cloc
+    write-host (Get-Location).Path -NoNewline -ForegroundColor $cloc
     write-host '}'  -ForegroundColor $cdelim
-	Write-Host ":~#" -NoNewline -ForegroundColor $cdelim
+    Write-Host "$([char]0x2588)$([char]0xE0B0)" -NoNewline -ForegroundColor $cdelim
     return ' '
 }
 
-function shorten-path([string] $path) { 
-   $loc = $path.Replace($HOME, '~') 
-   # remove prefix for UNC paths 
-   $loc = $loc -replace '^[^:]+::', '' 
-   # make path shorter like tabs in Vim, 
-   # handle paths starting with \\ and . correctly 
-   # return ($loc -replace '\\(\.?)([^\\])[^\\]*(?=\\)','\$1$2') 
+function shorten-path([string] $path) {
+   $loc = $path.Replace($HOME, '~')
+   # remove prefix for UNC paths
+   $loc = $loc -replace '^[^:]+::', ''
+   # make path shorter like tabs in Vim,
+   # handle paths starting with \\ and . correctly
+   # return ($loc -replace '\\(\.?)([^\\])[^\\]*(?=\\)','\$1$2')
    # return ($loc -replace �\\(\.?)([^\\]{3})[^\\]*(?=\\)�,'\$1$2')
    return $loc
 }
