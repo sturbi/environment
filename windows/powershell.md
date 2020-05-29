@@ -30,6 +30,7 @@ NTP Services auf Nodes prüfen
 Get-VMHost -Server vcenter.intern.studivz.net | Get-VMHostService | where {($_.key -eq "ntpd") -and ($_.Running -eq $false)} | ft vmhost, running, required -AutoSize
 
 
+Get-VM | Get-NetworkAdapter | Where {$_.MacAddress -eq “00:50:56:12:34:56”} | Select-Object Parent,Name,MacAddress
 
 
 Get-VirtualPortGroup -standard | select Name,VLanID | sort -Property VLanID | sort -Unique Name | Out-GridView
