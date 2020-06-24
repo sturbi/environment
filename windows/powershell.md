@@ -35,7 +35,11 @@ Get-VM | Get-NetworkAdapter | Where {$_.MacAddress -eq “00:50:56:12:34:56”} 
 
 Get-VirtualPortGroup -standard | select Name,VLanID | sort -Property VLanID | sort -Unique Name | Out-GridView
 
+Get-VMhost $esxhost | Get-ScsiLun -LunType disk | Where { $_.MultipathPolicy -notlike "RoundRobin" } | Select CanonicalName,MultipathPolicy
+Get-VMhost $esxhost | Get-ScsiLun -LunType disk | Where { $_.MultipathPolicy -notlike "RoundRobin" } | Set-ScsiLun -MultipathPolicy "RoundRobin"
 
+$esxcli.storage.nmp.satp.list()
+$esxcli.storage.nmp.satp.set($null, 'VMW_PSP_RR', 'VMW_SATP_ALUA')
 
 
 Get-QADComputer -ComputerRole DomainController | foreach { 
