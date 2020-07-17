@@ -140,6 +140,16 @@ source $ZSH/oh-my-zsh.sh
 #   fi
 # }
 
+ssh() {
+    if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
+						tmux rename-window "$*"
+						command ssh "$@"
+						tmux set-window-option automatic-rename "on" 1>/dev/null
+		else
+						command ssh "$@"
+		fi
+}
+
 bindkey "\033[1~" beginning-of-line
 bindkey "\033[4~" end-of-line
 
@@ -164,4 +174,6 @@ export PYTHONWARNINGS=ignore::UserWarning
 # export SSH_KEY_PATH="~/.ssh/id_ed25519"
 
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
+
+alias df='df -x"squashfs"'
 
