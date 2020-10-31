@@ -1,0 +1,34 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\Molokai]
+"Colour0"="208,208,208"
+"Colour1"="255,0,144"
+"Colour2"="39,40,34"
+"Colour3"="48,48,48"
+"Colour4"="255,255,255"
+"Colour5"="187,187,187"
+"Colour6"="18,18,18"
+"Colour7"="85,85,85"
+"Colour8"="250,37,115"
+"Colour9"="246,102,157"
+"Colour10"="152,225,35"
+"Colour11"="177,224,95"
+"Colour12"="223,212,96"
+"Colour13"="255,242,109"
+"Colour14"="16,128,208"
+"Colour15"="0,175,255"
+"Colour16"="135,0,255"
+"Colour17"="175,135,255"
+"Colour18"="67,168,208"
+"Colour19"="81,206,255"
+"Colour20"="187,187,187"
+"Colour21"="255,255,255"
+"LineCodePage"="UTF-8"
+"Xterm256Colour"=dword:00000001
+"UseSystemColours"=dword:00000000
+"FontHeight"=dword:0000000c
+"FontIsBold"=dword:00000000
+"Beep"=dword:00000002
+"BeepInd"=dword:00000000
+"Font"="Hack Nerd Font Mono"
+"TerminalType"="xterm-256color"
