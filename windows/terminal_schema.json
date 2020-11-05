@@ -1,0 +1,25 @@
+    "schemes": [
+        {
+            "name": "monokai",
+            "cursorColor": "#FFFFFF",
+            "foreground": "#f8f8f2",
+            "background": "#272822",
+
+            "black" : "#272822",
+            "blue" : "#f92672",
+            "cyan" : "#a6e22e",
+            "green" : "#f4bf75",
+            "purple" : "#66d9ef",
+            "red" : "#ae81ff",
+            "white" : "#a1efe4",
+            "yellow" : "#f8f8f2",
+            "brightBlack" : "#75715e",
+            "brightBlue" : "#f92672",
+            "brightCyan" : "#a6e22e",
+            "brightGreen" : "#f4bf75",
+            "brightPurple" : "#66d9ef",
+            "brightRed" : "#ae81ff",
+            "brightWhite" : "#a1efe4",
+            "brightYellow" : "#f9f8f5",
+        }
+    ],
