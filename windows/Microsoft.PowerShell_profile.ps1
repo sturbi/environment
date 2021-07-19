@@ -62,6 +62,11 @@ Add-Type -TypeDefinition $def
 #    Clear-Variable credjsonstring -ErrorAction SilentlyContinue
 #}
 
+#function connect-exchange {
+#    $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri http://server.domain.tld/PowerShell/ -Authentication Kerberos -Credential (Get-Credential)
+#    Import-PSSession $Session -DisableNameChecking
+#}
+
 function global:prompt {
     # our theme
     $cdelim = [ConsoleColor]::DarkCyan
