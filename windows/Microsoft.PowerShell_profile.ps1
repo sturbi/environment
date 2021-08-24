@@ -99,6 +99,28 @@ function shorten-path([string] $path) {
    return $loc
 }
 
+function Connect-RDP {
+    param (
+        [Parameter(Mandatory=$true)]
+        $ComputerName,
+
+        [System.Management.Automation.Credential()]
+        $Credential
+    )
+
+    $ComputerName | ForEach-Object {
+
+        if ($PSBoundParameters.ContainsKey('Credential'))
+        {
+            $User = $Credential.UserName
+            $Password = $Credential.GetNetworkCredential().Password
+            cmdkey.exe /generic:$_ /user:$User /pass:$Password
+        }
+        mstsc.exe /v $_ /f
+    }
+}
+
+Set-Alias -Name rdp -value Connect-RDP
 
 function big(){
 $pshost = get-host
