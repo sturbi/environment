@@ -133,7 +133,6 @@ function Connect-RDP {
             $KnownHosts = $KnownHosts + $_
             Set-Content -Path ($home + '\.rdp\known_hosts') -Value $KnownHosts
         }
-        $KnownHosts
     }
 }
 
