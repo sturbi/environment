@@ -99,6 +99,15 @@ function shorten-path([string] $path) {
    return $loc
 }
 
+Set-Location $home
+
+if (-not (Test-Path -Path ($home + '\.rdp') )) {
+    New-Item -ItemType Directory -Path ($home + '\.rdp')
+}
+
+if (-not (Test-Path -Path ($home + '\.rdp\known_hosts') )) {
+    New-Item -ItemType File -Path ($home + '\.rdp\known_hosts')
+}
 function Connect-RDP {
     param (
         [Parameter(Mandatory=$true)]
@@ -109,16 +118,28 @@ function Connect-RDP {
     )
 
     $ComputerName | ForEach-Object {
-
         if ($PSBoundParameters.ContainsKey('Credential'))
         {
             $User = $Credential.UserName
             $Password = $Credential.GetNetworkCredential().Password
+
             cmdkey.exe /generic:$_ /user:$User /pass:$Password
         }
+
         mstsc.exe /v $_ /f
+
+        $KnownHosts = Get-Content($home + '\.rdp\known_hosts')
+        if ($KnownHosts -Notmatch $_ ) {
+            $KnownHosts = $KnownHosts + $_
+            Set-Content -Path ($home + '\.rdp\known_hosts') -Value $KnownHosts
+        }
+        $KnownHosts
     }
 }
+
+$RDPAutoCompleterScript = { Get-Content($home + '\.rdp\known_hosts') }
+
+Register-ArgumentCompleter -CommandName Connect-RDP -ParameterName ComputerName -ScriptBlock $RDPAutoCompleterScript
 
 Set-Alias -Name rdp -value Connect-RDP
 
