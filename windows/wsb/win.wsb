@@ -1,0 +1,15 @@
+<Configuration>
+  <VGpu>Enable</VGpu>
+  <MemoryInMB>8192</MemoryInMB>
+  <Networking>Enable</Networking>
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>D:\daten</HostFolder>
+      <SandboxFolder>C:\data</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+  <LogonCommand>
+    <Command>C:\Data\Ad-inst\win-wsb.cmd</Command>
+  </LogonCommand>
+</Configuration>
