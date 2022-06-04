@@ -15,7 +15,7 @@ Get-VM | Get-CDDrive | ? { $_.ConnectionState.Connected -eq "true" } | Set-CDDri
 
 Get-VM | Get-Snapshot | Get-HardDisk | % { $_.filename }
 
-VM's mit CD-Rom
+VMs mit CD-Rom
 
 Get-CDDrive | where {$_.ConnectionState.Connected -eq $true}
 
