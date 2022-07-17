@@ -4,7 +4,6 @@ Host *
   ControlMaster auto
   ControlPath ~/.ssh/control/%r@%h:%p
   ControlPersist 1800
-  Protocol 2
   Compression yes
   TCPKeepAlive yes
   ServerAliveInterval 20
