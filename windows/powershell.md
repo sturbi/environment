@@ -1,4 +1,11 @@
 ```powershell
+Linked Clones bauen
+
+For ($i=6; $i -lt 26; $i++ ) {
+    $VM = "office0$i"
+    New-VM -Name $VM -VM $VM -ReferenceSnapshot "snap" -ResourcePool "office" -OSCustomizationSpec "Windows_Domain" -Location "temp" -Datastore "Datastore001" -LinkedClone
+}
+
 get-vm | Get-Snapshot | where{$_.Name.Length -gt 0 } | select Vm,Name,Description,Created
 
 Get-VM | Get-VMResourceConfiguration | where {$_.MemLimitMB -ne "-1"}
