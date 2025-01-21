@@ -1,0 +1,104 @@
+*~
+*.pyc
+*.egg-info
+build/
+dist/
+docs/_build
+docs/source/dev-guide/api
+docs/source/dev-guide/umls/*.puml
+.cache/
+.idea/
+ve/
+MANIFEST
+.coverage
+coverage.xml
+.tox/
+junit.xml
+tmpfile.rc
+.DS_Store
+.coverage*
+*.bz2
+tempfile.rc
+conda-build/
+conda_build_test_recipe/
+record.txt
+.vagrant/
+Vagrantfile
+dev-init.bat
+devenv/
+Miniconda*.sh
+miniconda*.sh
+miniconda*.exe
+.pytest_cache/
+**/.vscode
+conda.tmp/
+*.iml
+*.ipr
+*.iws
+test-report.xml
+
+# default pytest duration files
+.test_durations
+
+# Rever
+rever/
+
+# setuptools-scm
+conda/_version.py
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+#.idea/
+
+rever/
+
