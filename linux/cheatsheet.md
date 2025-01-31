@@ -1,5 +1,9 @@
 # cheatsheet
 
+## linux
+
+my IP               curl icanhazip.com
+
 ## bash
 
 ```bash
