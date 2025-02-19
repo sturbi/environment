@@ -35,6 +35,7 @@ conda.tmp/
 *.iml
 *.ipr
 *.iws
+*.ipynb
 test-report.xml
 
 # default pytest duration files
@@ -102,3 +103,4 @@ cython_debug/
 
 rever/
 
+linux/ansible_kernel.log
