@@ -1,0 +1,16 @@
+apt-get install ninja-build build-essential git debhelper cdbs dpkg-dev cmake cmake-curses-gui clang-format ccache opencl-c-headers ocl-icd-opencl-dev \
+    libmp3lame-dev libopus-dev libsoxr-dev libpam0g-dev pkg-config xmlto libssl-dev docbook-xsl xsltproc libxkbfile-dev libx11-dev libwayland-dev \
+    libxrandr-dev libxi-dev libxrender-dev libxext-dev libxinerama-dev libxfixes-dev libxcursor-dev libxv-dev libxdamage-dev libxtst-dev libcups2-dev \
+    libpcsclite-dev libasound2-dev libpulse-dev libgsm1-dev libusb-1.0-0-dev uuid-dev libxml2-dev libfaad-dev libfaac-dev libsdl2-dev libsdl2-ttf-dev \
+    libcjson-dev libpkcs11-helper-dev liburiparser-dev libkrb5-dev libsystemd-dev libfuse3-dev libswscale-dev libcairo2-dev libavutil-dev libavcodec-dev libswresample-dev libwebkit2gtk-4.1-dev libpkcs11-helper1-dev
+
+git clone --depth 1 --branch 3.15.0 https://github.com/freerdp/freerdp.git
+
+cmake -GNinja -B freerdp-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON -DCMAKE_INSTALL_PREFIX=/usr/local/freerdp -DWITH_SERVER=ON -DWITH_SAMPLE=ON \
+    -DWITH_PLATFORM_SERVER=OFF -DUSE_UNWIND=OFF -DWITH_SWSCALE=OFF -DWITH_FFMPEG=OFF -DWITH_WEBVIEW=OFF \
+    -BUILD_SHARED_LIBS=OFF
+
+cmake --build freerdp-build
+cmake --install freerdp-build
+
+https://github.com/FreeRDP/FreeRDP/wiki/Compilation
