@@ -64,3 +64,6 @@ command -v lsd > /dev/null && alias tree='lsd --tree'
 
 source /home/steffen/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/steffen/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+unsetopt HIST_VERIFY
+
